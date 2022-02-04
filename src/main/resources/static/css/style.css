@@ -35,7 +35,10 @@ form:after{
 
 /* FORM STUFF BEGINS HERE */
 form{
-	font-size:110%
+	font-size:110%;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 label{
@@ -56,7 +59,7 @@ input[type=email],
 input[type=tel],
 textarea,
 select{
-	width:100%;
+	width:25%;
 	padding:10px;
 	box-sizing:border-box;
 	background-color: #f2f2f2;	
@@ -101,6 +104,9 @@ input[type=submit]{
 	background-color: #4CAF50;
 	color: white;
 	border:none;
+	width: 10%;
+	margin-top: 10px;
+	text-align: center;
 }
 /* Reset Button: minimize the appearance */
 input[type=reset]{

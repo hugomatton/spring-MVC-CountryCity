@@ -36,7 +36,7 @@ public class HelloController {
 		return DEFAULT_VIEW;
 	}
 
-	@GetMapping(path = "defaultValue")
+	@GetMapping(path = "defaultView")
 	public String sayHelloToDefault(
 		@RequestParam(defaultValue = "Inconnu") 
 		String name, 
@@ -46,3 +46,14 @@ public class HelloController {
 		return DEFAULT_VIEW;
 	}
 }
+
+/*
+vue a besoin de liste ville + liste pays
+on fait appel aux méthodes créé dans TP1
+
+Ajouter
+Post qund on clique sur le bouton
+controller post
+	enregistrement des données villes
+	redirection vers get
+ */

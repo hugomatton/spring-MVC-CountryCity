@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>Exemple de template</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <a href="../index.html">Accueil</a>
+	<h1>Gestion des Country</h1>
+    <form method="POST">
+        <h2>Ajout de pays</h2>
+        <label for="code">Code : </label>
+        <input id="code" name="code" type="text"/>
+        <label for="name">Name : </label>
+        <input id="name" name="name" type="text"/>
+        <input type="submit"/>
+    </form>
+    <h2>Liste des pays</h2>
+    <table>
+        <tr>
+            <th>Code</th>
+            <th>Nom</th>
+        </tr>
+        
+        {{#lesPays}}
+            <tr>
+                <td>{{code}}</td>
+                <td>{{name}}</td>
+            </tr>
+        {{/lesPays}}
+    </table>
+
+</body>
+
+</html>
