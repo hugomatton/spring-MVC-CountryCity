@@ -4,39 +4,49 @@
 <head>
 	<title>Template ville</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="/css/monstyle.css" />
 </head>
 
 <body>
-    <a href="../index.html">Accueil</a>
-	<h1>Gestion des villes</h1>
-        <form method="POST">
+    <nav>
+        <a href="../index.html">Accueil</a>
+	    <h1>Gestion des villes</h1>
+        <p>TP spring-boot MVC with Mustache --> <span>MATTON Hugo FIE3</span></p>
+    </nav>
+    <hr>
+    <main>
+        <section class="formulaire">
             <h2>Ajouter une ville</h2>
-            <label for="name">Nom : </label><input type="text" name="name" id="name"/>
-            <label for="population">Population : </label><input type="text" name="population" id="population"/>
-            <label for="pays">Pays :</label>
-            <select id="pays" name="pays">
-                {{#lesPays}}
-                    <option value="{{id}}">{{name}}</option>
-                {{/lesPays}}
-            </select>
-            <input type="submit">
-        </form>
-    <h2>Liste des villes</h2>
-    <table>
-        <tr>
-            <th>Nom</th>
-            <th>Population</th>
-            <th>Pays</th>
-        </tr>
-        {{#lesVilles}}
-            <tr>
-                <td>{{name}}</td>
-                <td>{{population}}</td>
-                <td>{{country.name}}</td>
-            </tr>
-        {{/lesVilles}}
-    </table>
+            <form method="POST">
+                <label for="name">Nom : </label><input type="text" name="name" id="name"/>
+                <label for="population">Population : </label><input type="text" name="population" id="population"/>
+                <label for="pays">Pays :</label>
+                <select id="pays" name="pays">
+                    {{#lesPays}}
+                        <option value="{{id}}">{{name}}</option>
+                    {{/lesPays}}
+                </select>
+                <input type="submit">
+            </form>
+        </section>
+        <section class="affichage">
+            <h2>Liste des villes</h2>
+            <table>
+                <tr>
+                    <th>Nom</th>
+                    <th>Population</th>
+                    <th>Pays</th>
+                </tr>
+                {{#lesVilles}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{population}}</td>
+                        <td>{{country.name}}</td>
+                    </tr>
+                {{/lesVilles}}
+            </table>
+        </section>
+    </main>
 </body>
 
 </html>

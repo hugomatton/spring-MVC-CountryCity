@@ -1,0 +1,145 @@
+body{
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;	
+    height: 100vh;
+}
+
+html{
+    margin:0;
+    padding:0;
+}
+
+/*Barre de menu*/
+nav{
+    display: flex;
+    height: 80px;
+}
+
+nav h1 {
+    text-transform: uppercase;
+}
+
+hr {
+    border-color: #4CAF50;
+}
+
+nav a{
+    text-decoration: none;
+    margin-top: 26px;
+    margin-right: 30px;
+    margin-left: 15px;
+    color: #4CAF50;
+    
+}
+
+nav p {
+    margin-top: 26px;
+    margin-left: 50px;
+    font-style: italic;
+    color:#4CAF50;
+}
+
+nav p span{
+    font-weight: bold;
+}
+
+/*STRUCTURE PAGE*/
+main{
+    display: flex;
+}
+
+.formulaire {
+    flex:1;
+}
+
+.affichage{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*TABLEAU AFFICHAGE VILLE*/
+
+td, th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2;}
+
+tr:hover {background-color: #ddd;}
+
+th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #4CAF50;
+	color: white;
+}
+
+/*FORMULAIRE*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    width: 300px;
+    padding: 20px;
+    border: #4CAF50 2px solid;
+    border-radius: 10px;
+}
+
+
+input{
+    margin-bottom: 10px;
+}
+
+select{
+    margin-bottom: 15px;
+}
+
+.formulaire h2{
+    text-align: center;
+}
+
+label{
+    width: 100%;
+	display:block;
+	color:saddlebrown;
+	margin: 5px 0 3px;
+}
+
+fieldset label{
+	display:inline-block;
+	font-size:85%;
+	font-family: Calibri, sans-serif;
+}
+
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea,
+select{
+	width:100%;
+	padding:10px;
+	box-sizing:border-box;
+	background-color: #f2f2f2;	
+	border: solid 1px tan;
+}
+
+input[type=submit]{
+	padding-top:12px;
+	padding-bottom:12px;
+	padding-left:12px; 
+	padding-right:12px;
+	border-radius:10px;
+	text-align:left;
+	background-color: #4CAF50;
+	color: white;
+	border:none;
+	width: 50%;
+	margin-top: 10px;
+	text-align: center;
+}
