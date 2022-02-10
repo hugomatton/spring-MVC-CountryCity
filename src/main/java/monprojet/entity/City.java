@@ -18,6 +18,7 @@ import lombok.ToString;
 @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
 @Entity // Une entité JPA
 public class City {
+
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
 
@@ -29,4 +30,5 @@ public class City {
     @NonNull
     @ManyToOne(optional = false) // obligatoire, la clé étrangère ne doit pas être nulle
     Country country;
+
 }

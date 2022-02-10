@@ -16,16 +16,23 @@
     <hr>
     <main>
         <section class="formulaire">
-            <h2>Ajouter une ville</h2>
-            <form method="POST">
-                <label for="name">Nom : </label><input type="text" name="name" id="name"/>
-                <label for="population">Population : </label><input type="text" name="population" id="population"/>
+            <h2>{{^villeModif}}Ajouter {{/villeModif}}{{#villeModif}}Modifier {{/villeModif}}une ville</h2>
+           
+            <form 
+                {{#villeModif}}method="GET"{{/villeModif}}
+                {{#villeModif}}action="update"{{/villeModif}}
+                 {{^villeModif}}method="POST"{{/villeModif}}
+                {{^villeModif}}action="save"{{/villeModif}}
+            >
+                <label for="name">Nom : </label><input type="text" name="name" id="name" {{#villeModif}} value={{villeModif.name}} {{/villeModif}}/>
+                <label for="population">Population : </label><input type="number" name="population" id="population" {{#villeModif}} value={{villeModif.population}} {{/villeModif}}/>
                 <label for="pays">Pays :</label>
                 <select id="pays" name="pays">
                     {{#lesPays}}
-                        <option value="{{id}}">{{name}}</option>
+                        <option type="number" value="{{id}}">{{name}}</option>
                     {{/lesPays}}
                 </select>
+                <input type="hidden" {{#villeModif}}value={{id}} {{/villeModif}} name="id"/>
                 <input type="submit">
             </form>
         </section>
@@ -36,12 +43,17 @@
                     <th>Nom</th>
                     <th>Population</th>
                     <th>Pays</th>
+                    <th>Action</th>
                 </tr>
                 {{#lesVilles}}
                     <tr>
                         <td>{{name}}</td>
                         <td>{{population}}</td>
                         <td>{{country.name}}</td>
+                        <td>
+                            <a href='delete?id={{id}}'>Supprimer</a>
+                            <a href='edit?id={{id}}'>Modifier</a>
+                        </td>
                     </tr>
                 {{/lesVilles}}
             </table>
